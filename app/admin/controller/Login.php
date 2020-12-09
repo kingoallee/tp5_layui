@@ -32,13 +32,13 @@ class Login extends Base {
         } else {
             $username = $this->request->post('username', '', 'lemo\helper\StringHelper::filterWords');
             $password = $this->request->post('password', '', 'lemo\helper\StringHelper::filterWords');
-            $captcha = $this->request->post('captcha', '', 'lemo\helper\StringHelper::filterWords');
+//            $captcha = $this->request->post('captcha', '', 'lemo\helper\StringHelper::filterWords');
             $rememberMe = $this->request->post('rememberMe');
             // 用户信息验证
             try {
-                if(!captcha_check($captcha)){
-                    throw new \Exception(lang('captcha error'));
-                }
+//                if(!captcha_check($captcha)){
+//                    throw new \Exception(lang('captcha error'));
+//                }
                 $res = self::checkLogin($username, $password,$rememberMe);
             } catch (\Exception $e) {
 
